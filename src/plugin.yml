@@ -1,0 +1,7 @@
+name: InvalidMapFixer
+main: com.haxalicious.InvalidMapFixer.InvalidMapFixer
+version: 1.0
+api-version: 1.12
+description: Stops maps with high IDs from overflowing the map pool after resets.
+author: Haxalicious
+commands:
