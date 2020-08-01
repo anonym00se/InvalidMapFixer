@@ -17,8 +17,7 @@ public class MapFixerFull implements Listener {
 		if(item.getType() == Material.MAP) { // Only check maps
 			if(Bukkit.getMap(item.getDurability()) == null) { // Check for invalid map
 				event.setCancelled(true);
-				int stackSize = item.getAmount();
-				droppedItem.setItemStack(new ItemStack(Material.MAP, stackSize, (short) 0)); // Revert map to ID 0
+				droppedItem.remove(); // Remove map
 			}
 		}
 	}
