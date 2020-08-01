@@ -11,13 +11,13 @@ import org.bukkit.inventory.ItemStack;
 @SuppressWarnings("deprecation")
 public class MapFixerFull implements Listener {
 	@EventHandler
-	public void onPlayerPickupItemEvent(PlayerPickupItemEvent event) { // Patch exploit through container breaking
+	public void onPlayerPickupItemEvent(PlayerPickupItemEvent event) { // Patch secondary exploit method
 		Item droppedItem = event.getItem();
-		ItemStack item = droppedItem.getItemStack();
+		ItemStack item = droppedItem.getItemStack(); // Get dropped item data
 		if(item.getType() == Material.MAP) { // Only check maps
 			if(Bukkit.getMap(item.getDurability()) == null) { // Check for invalid map
 				event.setCancelled(true);
-				droppedItem.remove(); // Remove map
+				droppedItem.remove(); // Delete map
 			}
 		}
 	}

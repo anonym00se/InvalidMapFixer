@@ -11,7 +11,7 @@ import org.bukkit.inventory.ItemStack;
 @SuppressWarnings("deprecation")
 public class MapFixerBasic implements Listener {
 	@EventHandler
-	public void onInventoryClickEvent(InventoryClickEvent event) { // Patch main exploit
+	public void onInventoryClickEvent(InventoryClickEvent event) { // Patch main exploit method
 		try {
 			ItemStack item = event.getCurrentItem();
 			if(item.getType() == Material.MAP) { // Only check maps
